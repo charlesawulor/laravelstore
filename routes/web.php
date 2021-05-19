@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +14,31 @@ Route::get('/', function () {
     return view('storehome');
 });
 
-Auth::routes();
+
 
 Route::get('/storehome', 'HomeController@index')->name('storehome');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

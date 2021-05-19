@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
+use App\category;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     { 
         
+
+        View::share('categories', category::orderBy('id')->get());
+       
     
 
     }

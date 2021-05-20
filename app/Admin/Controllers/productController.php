@@ -29,7 +29,8 @@ class productController extends AdminController
         $grid = new Grid(new product());
 
         $grid->column('id', __('Id'));
-        $grid->column('category', __('Category'));
+        $grid->column('category_id', __('Category'));
+        $grid->column('category_name', __('Category'));
         $grid->column('image', __('Image'));
         $grid->column('product_name', __('Product name'));
         $grid->column('product_description', __('Product description'));
@@ -51,7 +52,8 @@ class productController extends AdminController
         $show = new Show(product::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('category', __('Category'));
+        $show->field('category_id', __('Category'));
+        $show->field('category_name', __('Category'));
         $show->field('image', __('Image'));
         $show->field('product_name', __('Product name'));
         $show->field('product_description', __('Product description'));
@@ -71,7 +73,8 @@ class productController extends AdminController
     {
         $form = new Form(new product());
 
-        $form->select('category')->options(category::all()->pluck('category','id'));
+        $form->select('category_id')->options(category::all()->pluck('category','id'));
+        $form->select('category_name')->options(category::all()->pluck('category','category'));
         $form->image('image', __('Image'));
         $form->text('product_name', __('Product name'));
         $form->textarea('product_description', __('Product description'));

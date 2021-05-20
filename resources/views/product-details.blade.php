@@ -2,118 +2,31 @@
 
 @section('content')  
       	
-      
-      
-        <div class="product-details-area pb-100 pt-100">
+
+		
+<div class="product-details-area pb-100 pt-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-details-img-wrap" data-aos="fade-up" data-aos-delay="200">
-                            <div class="swiper-container product-details-big-img-slider-2 pd-big-img-style">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="easyzoom-style">
-                                            <div class="easyzoom easyzoom--overlay">
-                                                <a href="assets/images/product-details/pro-details-zoom-img-1.png">
-                                                    <img src="assets/images/product-details/pro-details-large-img-1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/pro-details-large-img-1.png">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="easyzoom-style">
-                                            <div class="easyzoom easyzoom--overlay">
-                                                <a href="assets/images/product-details/pro-details-zoom-img-2.png">
-                                                    <img src="assets/images/product-details/pro-details-large-img-2.png" alt="">
-                                                </a>
-                                            </div>
-                                            <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/pro-details-large-img-2.png">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="easyzoom-style">
-                                            <div class="easyzoom easyzoom--overlay">
-                                                <a href="assets/images/product-details/pro-details-zoom-img-3.png">
-                                                    <img src="assets/images/product-details/pro-details-large-img-3.png" alt="">
-                                                </a>
-                                            </div>
-                                            <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/pro-details-large-img-3.png">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="easyzoom-style">
-                                            <div class="easyzoom easyzoom--overlay">
-                                                <a href="assets/images/product-details/pro-details-zoom-img-4.png">
-                                                    <img src="assets/images/product-details/pro-details-large-img-4.png" alt="">
-                                                </a>
-                                            </div>
-                                            <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/pro-details-large-img-4.png">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="easyzoom-style">
-                                            <div class="easyzoom easyzoom--overlay">
-                                                <a href="assets/images/product-details/pro-details-zoom-img-5.png">
-                                                    <img src="assets/images/product-details/pro-details-large-img-5.png" alt="">
-                                                </a>
-                                            </div>
-                                            <a class="easyzoom-pop-up img-popup" href="assets/images/product-details/pro-details-large-img-5.png">
-                                                <i class="pe-7s-search"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <div class="easyzoom-style">
+                                <div class="easyzoom easyzoom--overlay">
+                                    <a href="">
+                                        <img src="/laravelstore/storage/app/public/{{$products->image}}" alt="">
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="product-details-small-img-wrap">
-                                <div class="swiper-container product-details-small-img-slider-2 pd-small-img-style pd-small-img-style-modify">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="assets/images/product-details/pro-details-small-img-6.png" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="assets/images/product-details/pro-details-small-img-7.png" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="assets/images/product-details/pro-details-small-img-8.png" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="assets/images/product-details/pro-details-small-img-9.png" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="assets/images/product-details/pro-details-small-img-10.png" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pd-prev-2 pd-nav-style-2"> <i class="ti-angle-left"></i></div>
-                                <div class="pd-next-2 pd-nav-style-2"> <i class="ti-angle-right"></i></div>
+                                <a class="easyzoom-pop-up img-popup" href="/laravelstore/storage/app/public/{{$products->image}}">
+                                    <i class="pe-7s-search"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="product-details-content" data-aos="fade-up" data-aos-delay="400">
-                            <h2>New Modern Chair</h2>
+                            <h2>{{$products->product_name}}</h2>
                             <div class="product-details-price">
-                                <span class="old-price">$25.89 </span>
-                                <span class="new-price">$20.25</span>
+                              
+                                <span class="new-price">${{$products->product_price}}</span>
                             </div>
                             <div class="product-details-review">
                                 <div class="product-rating">
@@ -152,8 +65,8 @@
                                     <li><span class="title">SKU:</span> Ch-256xl</li>
                                     <li><span class="title">Category:</span>
                                         <ul>
-                                            <li><a href="#">Office</a>,</li>
-                                            <li><a href="#">Home</a></li>
+                                            <li><a href="#">{{$products->category_name}}</a>,</li>
+                                            
                                         </ul>
                                     </li>
                                     <li><span class="title">Tags:</span>
@@ -175,6 +88,10 @@
                 </div>
             </div>
         </div>
+		
+		
+		
+		
         <div class="description-review-area pb-85">
             <div class="container">
                 <div class="description-review-topbar nav" data-aos="fade-up" data-aos-delay="200">
@@ -185,8 +102,8 @@
                 <div class="tab-content">
                     <div id="des-details1" class="tab-pane active">
                         <div class="product-description-content text-center">
-                            <p data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                            <p data-aos="fade-up" data-aos-delay="400">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut per unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+                            <p data-aos="fade-up" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                            <p data-aos="fade-up" data-aos-delay="600">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut per unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
                         </div>
                     </div>
                     <div id="des-details2" class="tab-pane">
@@ -424,6 +341,5 @@
                 </div>
             </div>
         </div>
-
         
-        @endsection
+@endsection

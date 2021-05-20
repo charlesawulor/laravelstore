@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class productController extends Controller
+use App\product;
+
+class shopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,9 @@ class productController extends Controller
      */
     public function index()
     {
-        //
+        $products = product::orderBy('id','asc')->get();
+        return view('shop',compact ('products'));
+
     }
 
     /**
@@ -45,7 +49,8 @@ class productController extends Controller
      */
     public function show($id)
     {
-      //
+        $products = product::find($id);
+        return view('product-details')->with('products',$products);
     }
 
     /**

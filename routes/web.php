@@ -18,6 +18,9 @@ Route::get('/', function () {
 
 Route::get('/storehome', 'HomeController@index')->name('storehome');
 
+Route::resource('shop','shopController');
+
+Route::resource('product-details','shopController');
 
 
 

@@ -79,7 +79,7 @@
 	@foreach($categories as $category)
     <div class="col-lg-4 col-md-6 col-12">
                         <div class="banner-wrap mb-30" data-aos="fade-up" data-aos-delay="200">
-                            <a href="product-details.html"><img src="/laravelstore/storage/app/public/{{$category->image}}" alt=""></a>
+                            <a href=""><img src="/laravelstore/storage/app/public/{{$category->image}}" alt=""></a>
                             <div class="banner-content-1">
                                 <h5>new arrival</h5>
                                 <h3>{{$category->category}}</h3>

@@ -11,40 +11,40 @@
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="Urdan Minimal eCommerce Bootstrap 5 Template is a stunning eCommerce website template that is the best choice for any online store.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="canonical" href="https://htmldemo.hasthemes.com/urdan/index.html" />
+    <link rel="profile" href="{{asset('https://gmpg.org/xfn/11')}}">
+    <link rel="canonical" href="{{asset('https://htmldemo.hasthemes.com/urdan/index.html')}}" />
 
     <!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Urdan - Minimal eCommerce HTML Template" />
-    <meta property="og:url" content="https://htmldemo.hasthemes.com/urdan/index.html" />
+    <meta property="og:url" content="{{asset('https://htmldemo.hasthemes.com/urdan/index.html')}}" />
     <meta property="og:site_name" content="Urdan - Minimal eCommerce HTML Template" />
     <!-- For the og:image content, replace the # with a link of an image -->
     <meta property="og:image" content="#" />
     <meta property="og:description" content="Urdan Minimal eCommerce Bootstrap 5 Template is a stunning eCommerce website template that is the best choice for any online store." />
     <!-- Add site Favicon -->
-    <link rel="icon" href="assets/images/favicon/cropped-favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="assets/images/favicon/cropped-favicon-192x192.png" sizes="192x192" />
+    <link rel="icon" href="{{asset('assets/images/favicon/cropped-favicon-32x32.png')}}" sizes="32x32" />
+    <link rel="icon" href="{{asset('assets/images/favicon/cropped-favicon-192x192.png')}}" sizes="192x192" />
     <link rel="apple-touch-icon" href="assets/images/favicon/cropped-favicon-180x180.png" />
-    <meta name="msapplication-TileImage" content="assets/images/favicon/cropped-favicon-270x270.png" />
+    <meta name="msapplication-TileImage" content="{{asset('assets/images/favicon/cropped-favicon-270x270.png')}}" />
 
     <!-- All CSS is here
 	============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/pe-icon-7-stroke.css" />
-    <link rel="stylesheet" href="assets/css/vendor/themify-icons.css" />
-    <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/animate.css" />
-    <link rel="stylesheet" href="assets/css/plugins/aos.css" />
-    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nice-select.css" />
-    <link rel="stylesheet" href="assets/css/plugins/select2.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/easyzoom.css" />
-    <link rel="stylesheet" href="assets/css/plugins/slinky.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/vendor/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/vendor/pe-icon-7-stroke.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/vendor/themify-icons.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/vendor/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/animate.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/aos.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/swiper.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/jquery-ui.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/nice-select.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/select2.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/easyzoom.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/slinky.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
 </head>
 
 
@@ -74,12 +74,12 @@
                                     </div>
                                 </div>
                                 <div class="language-wrap">
-                                    <a class="language-active" href="#"><img src="assets/images/icon-img/flag.png" alt=""> English <i class=" ti-angle-down "></i></a>
+                                    <a class="language-active" href="#"><img src="{{asset('assets/images/icon-img/flag.png')}}" alt=""> English <i class=" ti-angle-down "></i></a>
                                     <div class="language-dropdown">
                                         <ul>
-                                            <li><a href="#"><img src="assets/images/icon-img/flag.png" alt="">English </a></li>
-                                            <li><a href="#"><img src="assets/images/icon-img/spanish.png" alt="">Spanish</a></li>
-                                            <li><a href="#"><img src="assets/images/icon-img/arabic.png" alt="">Arabic </a></li>
+                                            <li><a href="#"><img src="{{asset('assets/images/icon-img/flag.png')}}" alt="">English </a></li>
+                                            <li><a href="#"><img src="{{asset('assets/images/icon-img/spanish.png')}}" alt="">Spanish</a></li>
+                                            <li><a href="#"><img src="{{asset('assets/images/icon-img/arabic.png')}}" alt="">Arabic </a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/logo/logo2.png" alt="logo"></a>
+                                <a href="index.html"><img src="{{asset('assets/images/logo/logo2.png')}}" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-block d-flex justify-content-center">
@@ -112,7 +112,7 @@
                                                 <li><a href="index-8.html">Home version 8</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="shop.html">SHOP</a>
+                                        <li><a href="/laravelstore/public/shop/">SHOP</a>
                                             <ul class="mega-menu-style mega-menu-mrg-1">
                                                 <li>
                                                     <ul>

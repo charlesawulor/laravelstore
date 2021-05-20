@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
 use App\category;
+use App\product;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
         
 
         View::share('categories', category::orderBy('id')->get());
+        View::share('products', product::orderBy('id')->get());
+     
        
     
 

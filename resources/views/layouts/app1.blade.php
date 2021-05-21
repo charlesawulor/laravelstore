@@ -190,9 +190,11 @@
                         <!-- Authentication Links -->
                    
                         @else
+
+                        
                              <li >
-                             <h1 id="navbarDropdown" class="dropdown-item" href="#" role="button"  aria-haspopup="true"  aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} </h1>
+                             <a id="navbarDropdown" class="dropdown-item" href="#" role="button"  aria-haspopup="true"  aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} </a>
 
                              </li>
 

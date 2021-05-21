@@ -145,34 +145,23 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">PAGES</a>
-                                            <ul class="sub-menu-style">
-                                                <li><a href="about-us.html">about us </a></li>
-                                                <li><a href="cart.html">cart page</a></li>
-                                                <li><a href="checkout.html">checkout </a></li>
-                                                <li><a href="my-account.html">my account</a></li>
-                                                <li><a href="wishlist.html">wishlist </a></li>
-                                                <li><a href="compare.html">compare </a></li>
-                                                <li><a href="contact-us.html">contact us </a></li>
-                                                <li><a href="login-register.html">login / register </a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">BLOG</a>
-                                            <ul class="sub-menu-style">
-                                                <li><a href="blog.html">blog standard </a></li>
-                                                <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
-                                            </ul>
-                                        </li>
+                                  
+                                       
                                         <li><a href="about-us.html">ABOUT</a></li>
                                         <li><a href="contact-us.html">CONTACT US</a></li>
                                     </ul>
                                 </nav>
+
+
+                        
+
                             </div>
                         </div>
+                       
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="header-action-wrap">
-                                <div class="header-action-style header-search-1">
+                            
+                            <div class="header-action-style header-search-1">
                                     <a class="search-toggle" href="#">
                                         <i class="pe-7s-search s-open"></i>
                                         <i class="pe-7s-close s-close"></i>
@@ -184,9 +173,70 @@
                                         </form>
                                     </div>
                                 </div>
+
+
+
+                                @guest   
+
                                 <div class="header-action-style">
-                                    <a title="Login Register" href="login-register.html"><i class="pe-7s-user"></i></a>
+                                    <a title="Login " href="{{ route('login') }}"><i class="pe-7s-user"></i></a>
                                 </div>
+                                <div class="header-action-style">
+                                    <a title="Register" href="{{ route('register') }}"><i class="pe-7s-add-user"></i></a>
+                                </div>
+
+
+                                <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                   
+                        @else
+                        <li>
+                                <a id="navbarDropdown" role="button" class="dropdown-item" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} </a>
+
+                                    </li>
+                                
+                               
+                       
+                            <li>
+                               
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                
+                            </li>
+
+
+
+                           
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                          
+
+
+
+
+                        @endguest
+                    </ul>
+
+
+
                                 <div class="header-action-style">
                                     <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
                                 </div>
@@ -447,7 +497,8 @@
                                     <li><a href="wishlist.html">Wishlist </a></li>
                                     <li><a href="compare.html">Compare </a></li>
                                     <li><a href="contact-us.html">Contact us </a></li>
-                                    <li><a href="login-register.html">Login / Register </a></li>
+                                    <li><a href="{{ route('register') }}">Register </a></li>
+                                    <li><a href="{{ route('register') }}">Login  </a></li>
                                 </ul>
                             </li>
                             <li>

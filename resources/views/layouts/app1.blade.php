@@ -190,15 +190,13 @@
                         <!-- Authentication Links -->
                    
                         @else
-                        <li>
-                                <a id="navbarDropdown" role="button" class="dropdown-item" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} </a>
+                             <li >
+                             <h1 id="navbarDropdown" class="dropdown-item" href="#" role="button"  aria-haspopup="true"  aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} </h1>
 
-                                    </li>
-                                
-                               
-                       
-                            <li>
+                             </li>
+
+                             <li>
                                
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -209,6 +207,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
                                 
                             </li>
 

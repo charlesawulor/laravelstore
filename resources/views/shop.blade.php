@@ -52,13 +52,15 @@
                         <div class="shop-bottom-area">
                             <div class="tab-content jump">
                                 <div id="shop-1" class="tab-pane active">
-                                    <div class="row">
+
+                             <div class="row">
 
 
 
                                     @if(count($products) > 0)	
 	                                @foreach($products as $product)
-
+ 
+                                 
                                         <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                             <div class="product-wrap mb-35" data-aos="fade-up" data-aos-delay="200">
                                                 <div class="product-img img-zoom mb-25">
@@ -74,9 +76,14 @@
                                                             <i class="pe-7s-look"></i>
                                                         </button>
                                                     </div>
+                                           
+                                         
+                                           
                                                     <div class="product-action-2-wrap">
                                                         <button class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Add to cart</button>
                                                     </div>
+                                  
+
                                                 </div>
                                                 <div class="product-content">
                                                     <h3><a href="product-details.html">{{$product->product_name}}</a></h3>
@@ -87,6 +94,10 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                    
+
+                                      
 
                                      @endforeach
                                  @endif

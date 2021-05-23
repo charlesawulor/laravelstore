@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\product;
 
-class shopController extends Controller
+use App\cart;
+
+class cartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +17,7 @@ class shopController extends Controller
      */
     public function index()
     {
-       $products = product::orderBy('id','asc')->get();
-        return view('shop',compact ('products'));
-
+        //
     }
 
     /**
@@ -38,7 +38,15 @@ class shopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cart = new cart;
+        $cart->user_id = auth()->user()->id;
+        $cart->product_id = $request->input('product_id');
+        $cart->product_name = $request->input('product_name');
+        $cart->product_price = $request->input('product_price');
+        $cart->product_quantity = $request->input('product_quantity');
+        $cart->save();
+ 
+        return redirect('product-details')->with('success', 'Product added to cart');
     }
 
     /**
@@ -49,8 +57,7 @@ class shopController extends Controller
      */
     public function show($id)
     {
-        $products = product::find($id);
-        return view('product-details')->with('products',$products);
+        //
     }
 
     /**

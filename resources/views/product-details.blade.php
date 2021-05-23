@@ -47,6 +47,23 @@
                                 </ul>
                             </div>
                             <div class="product-details-action-wrap">
+
+
+                          <form action="{{ route('cart.store') }}" method="POST">
+                                {{ csrf_field() }}
+
+                                <input type="text" value="{{$products->id}}" name="product_id" placeholder="product id">
+                                <input type="text" value="{{$products->product_name}}" name="product_name" placeholder="product name">
+                                <input type="text" value="{{$products->product_price}}" name="product_price" placeholder="product price">
+                                <input type="text" value="1" name="product_quantity" placeholder="quantity">
+
+                                <div class="single-product-cart btn-hover">
+                                 <button  type="submit">Add to cart</button>
+                                </div>
+
+                                </form>
+
+
                                 <div class="product-quality">
                                     <input class="cart-plus-minus-box input-text qty text" name="qtybutton" value="1">
                                 </div>

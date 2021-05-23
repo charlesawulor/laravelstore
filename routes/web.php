@@ -22,6 +22,10 @@ Route::resource('shop','shopController');
 
 Route::resource('product-details','shopController');
 
+//Route::resource('product-details','cartController');
+
+Route::post('product-details', 'cartController@store')->name('cart.store');
+
 
 
 

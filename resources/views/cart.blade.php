@@ -139,12 +139,24 @@
                                                     </div>
                                                 </td>
                                                 <td class="product-total"><span>$120.00</span></td>
-                                                <td class="product-remove"><a href="#"><i class=" ti-trash "></i></a></td>
+
+                                            
+
+                                            
+
+                                    <td>  <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+ {{csrf_field()}}
+{{method_field('DELETE')}}
+
+<button type="submit" class="cart-options">Remove from cart</button>
+
+     </form> </td>
                                             </tr>
 
+                                            @endforeach
+                                   
 
-                                           @endforeach
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>                            

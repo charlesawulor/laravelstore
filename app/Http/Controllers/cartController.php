@@ -83,6 +83,9 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+    Cart::remove($id);
+    return redirect()->route('cart')->with('success_message','Item removed from cart');
     }
+
+
 }

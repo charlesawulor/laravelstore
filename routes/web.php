@@ -33,29 +33,7 @@ Cart::destroy();
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 
 Auth::routes();
 

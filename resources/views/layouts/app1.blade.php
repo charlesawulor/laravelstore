@@ -242,8 +242,8 @@
                                     <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
                                 </div>
                                 <div class="header-action-style header-action-cart">
-                                    <a class="cart-active" href="#"><i class="pe-7s-shopbag"></i>
-                                        <span class="product-count bg-black">01</span>
+                                    <a class="cart-active" href="{{route('cart')}}"><i class="pe-7s-shopbag"></i>
+                                        <span class="product-count bg-black"> {{Cart::count()}}</span>
                                     </a>
                                 </div>
                                 <div class="header-action-style d-block d-lg-none">
@@ -291,7 +291,7 @@
                         <h4>Subtotal: <span>$170.00</span></h4>
                     </div>
                     <div class="cart-btn btn-hover">
-                        <a class="theme-color" href="cart.html">view cart</a>
+                        <a class="theme-color" href="{{route('cart')}}">view cart</a>
                     </div>
                     <div class="checkout-btn btn-hover">
                         <a class="theme-color" href="checkout.html">checkout</a>

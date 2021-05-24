@@ -7,7 +7,7 @@
 <div class="product-details-area pb-100 pt-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                <div class="col-lg-6">
                         <div class="product-details-img-wrap" data-aos="fade-up" data-aos-delay="200">
                             <div class="easyzoom-style">
                                 <div class="easyzoom easyzoom--overlay">
@@ -15,7 +15,7 @@
                                         <img src="/laravelstore/storage/app/public/{{$products->image}}" alt="">
                                     </a>
                                 </div>
-                                <a class="easyzoom-pop-up img-popup" href="/laravelstore/storage/app/public/{{$products->image}}">
+                                <a class="easyzoom-pop-up img-popup" href="">
                                     <i class="pe-7s-search"></i>
                                 </a>
                             </div>
@@ -46,30 +46,29 @@
                                     <li><a title="Purple" class="purple" href="#">purple</a></li>
                                 </ul>
                             </div>
+
+
+
+
+                            <form action="{{route('cart')}}" method="POST">
+  {{ csrf_field() }}
+   <input type="text" name="id" value="{{$products->id}}">
+ <input type="text" name="name" value="{{$products->product_name}}">
+ <input type="text" name="price" value="{{$products->product_price}}">
+ <button type="submit" class="single-product-cart btn-hover" >Add to cart</button>
+ </form>
+
+
+
                             <div class="product-details-action-wrap">
-
-
-                          <form action="{{ route('cart.store') }}" method="POST">
-                                {{ csrf_field() }}
-
-                                <input type="text" value="{{$products->id}}" name="product_id" placeholder="product id">
-                                <input type="text" value="{{$products->product_name}}" name="product_name" placeholder="product name">
-                                <input type="text" value="{{$products->product_price}}" name="product_price" placeholder="product price">
-                                <input type="text" value="1" name="product_quantity" placeholder="quantity">
-
-                                <div class="single-product-cart btn-hover">
-                                 <button  type="submit">Add to cart</button>
-                                </div>
-
-                                </form>
-
-
                                 <div class="product-quality">
                                     <input class="cart-plus-minus-box input-text qty text" name="qtybutton" value="1">
                                 </div>
+
                                 <div class="single-product-cart btn-hover">
                                     <a href="#">Add to cart</a>
                                 </div>
+
                                 <div class="single-product-wishlist">
                                     <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
                                 </div>
@@ -236,6 +235,8 @@
                                             <i class="pe-7s-look"></i>
                                         </button>
                                     </div>
+
+
                                     <div class="product-action-2-wrap">
                                         <button class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Add to cart</button>
                                     </div>
@@ -313,9 +314,18 @@
                                             <i class="pe-7s-look"></i>
                                         </button>
                                     </div>
+
+
+
+
                                     <div class="product-action-2-wrap">
                                         <button class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Add to cart</button>
                                     </div>
+
+                                
+
+
+
                                 </div>
                                 <div class="product-content">
                                     <h3><a href="product-details.html">Stylish Swing Chair</a></h3>

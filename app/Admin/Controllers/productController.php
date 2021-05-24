@@ -35,6 +35,7 @@ class productController extends AdminController
         $grid->column('product_name', __('Product name'));
         $grid->column('product_description', __('Product description'));
         $grid->column('product_price', __('Product price'));
+        $grid->column('quantity', __('Quantity'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -58,6 +59,7 @@ class productController extends AdminController
         $show->field('product_name', __('Product name'));
         $show->field('product_description', __('Product description'));
         $show->field('product_price', __('Product price'));
+        $show->field('quantity', __('Quantity'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -79,6 +81,7 @@ class productController extends AdminController
         $form->text('product_name', __('Product name'));
         $form->textarea('product_description', __('Product description'));
         $form->text('product_price', __('Product price'));
+        $form->text('quantity', __('Quantity'));
 
         return $form;
     }

@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
-use App\product;
-
-use App\cart;
-
-class cartController extends Controller
+use Gloudemans\Shoppingcart\Facades\Cart;
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +13,7 @@ class cartController extends Controller
      */
     public function index()
     {
-        //
+        return view('cart');
     }
 
     /**
@@ -38,16 +34,12 @@ class cartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart = new cart;
-        $cart->user_id = auth()->user()->id;
-        $cart->product_id = $request->input('product_id');
-        $cart->product_name = $request->input('product_name');
-        $cart->product_price = $request->input('product_price');
-        $cart->product_quantity = $request->input('product_quantity');
-        $cart->save();
- 
-        return redirect('product-details')->with('success', 'Product added to cart');
+        Cart::add($request->id, $request->name, 1, $request->price) ->associate('App\Product');
+        return redirect()->route('cart')->with('success_message','Item added to cart');
     }
+
+
+ 
 
     /**
      * Display the specified resource.

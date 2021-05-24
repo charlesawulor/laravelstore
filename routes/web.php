@@ -22,9 +22,16 @@ Route::resource('shop','shopController');
 
 Route::resource('product-details','shopController');
 
-//Route::resource('product-details','cartController');
+Route::get('/cart', 'CartController@index')->name('cart');
 
-Route::post('product-details', 'cartController@store')->name('cart.store');
+Route::post('/cart', 'CartController@store')->name('cart');
+
+
+Route::get('empty', function(){
+
+Cart::destroy();
+
+});
 
 
 

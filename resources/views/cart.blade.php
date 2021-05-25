@@ -282,7 +282,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <h3 style="margin-left:40%"> No items in cart</h3>
+                        <h3 style="margin-left:40%"> No item in cart</h3>
 
                    </div>
                 </div>
@@ -371,7 +371,7 @@
 
       @else
 
-      <h3>You have no saved item</h3> 
+      <h3 style="margin-left:33%"> You have no item saved for later</h3>
 
        @endif
 

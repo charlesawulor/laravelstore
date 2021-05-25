@@ -58,7 +58,7 @@
                         @endif
                     </ul>
                     <div class="cart-total">
-                        <h4>Subtotal: <span>$170.00</span></h4>
+                        <h4>Subtotal: <span>${{ Cart::subtotal() }}</span></h4>
                     </div>
                     <div class="cart-btn btn-hover">
                         <a class="theme-color" href="cart.html">view cart</a>
@@ -126,13 +126,13 @@
                                                     <h5><a href="product-details.html">
                                                     {{$item->model->product_name}}</a></h5>
                                                 </td>
-                                                <td class="product-cart-price"><span class="amount">{{$item->model->product_price}}</span></td>
+                                                <td class="product-cart-price"><span class="amount">${{$item->model->product_price}}</span></td>
                                                 <td class="cart-quality">
                                                     <div class="product-quality">
                                                         <input class="cart-plus-minus-box input-text qty text" name="qtybutton" value="1">
                                                     </div>
                                                 </td>
-                                                <td class="product-total"><span>$120.00</span></td>
+                                                <td class="product-total"><span>$</span></td>
 
                                             
 
@@ -228,7 +228,10 @@
                     <div class="col-lg-4 col-md-12 col-12">
                         <div class="grand-total-wrap">
                             <div class="grand-total-content">
-                                <h3>Subtotal <span>$180.00</span></h3>
+                                <h3>Subtotal <span>${{ Cart::subtotal() }}</span></h3>
+                                <h3>Tax <span>${{ Cart::tax() }}</span></h3>
+                            
+
                                 <div class="grand-shipping">
                                     <span>Shipping</span>
                                     <ul>
@@ -241,7 +244,7 @@
                                     <p>Shipping to Bangladesh</p>
                                 </div>
                                 <div class="grand-total">
-                                    <h4>Total <span>$185.00</span></h4>
+                                    <h4>Total <span>${{ Cart::total() }}</span></h4>
                                 </div>
                             </div>
                             <div class="grand-total-btn btn-hover">

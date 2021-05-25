@@ -57,6 +57,7 @@
                     <input type="hidden" name="price" value="{{$products->product_price}}">
                     <button style="background-color:#e97730; border:2px solid white ; color:white ; font-weight:600 ; padding: 20px 17px" type="submit" class="single-product-cart btn-hover" >Add to cart</button>
                     </form>
+                   <div class="spacer"></div>
 
                        <div class="product-details-action-wrap">
                                 <div class="product-quality">

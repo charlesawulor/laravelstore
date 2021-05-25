@@ -243,7 +243,11 @@
                                 </div>
                                 <div class="header-action-style header-action-cart">
                                     <a class="cart-active" href="{{route('cart')}}"><i class="pe-7s-shopbag"></i>
-                                        <span class="product-count bg-black"> {{Cart::count()}}</span>
+
+                                    @if (Cart::instance('default')->count() > 0)
+                             <span class="product-count bg-black"> {{Cart::instance('default')->count() }}</span>
+                              @endif
+
                                     </a>
                                 </div>
                                 <div class="header-action-style d-block d-lg-none">
@@ -291,7 +295,7 @@
                    
                     </ul>
                     <div class="cart-total">
-                        <h4>Subtotal: <span>$1700.00</span></h4>
+                        <h4>Subtotal: <span>${{ Cart::subtotal() }}</span></h4>
                     </div>
                     <div class="cart-btn btn-hover">
                         <a class="theme-color" href="{{route('cart')}}">view cart</a>

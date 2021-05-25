@@ -38,30 +38,24 @@
                 <div class="cart-content">
                     <h3>Shopping Cart</h3>
                     <ul>
+                    @if (Cart::count() > 0 )
+                    @foreach (Cart::content() as $item)
                         <li>
                             <div class="cart-img">
-                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                                <a href="#"><img src="/laravelstore/storage/app/public/{{$item->model->image}}" alt=""></a>
                             </div>
                             <div class="cart-title">
-                                <h4><a href="#">Stylish Swing Chair</a></h4>
-                                <span> 1 × $49.00	</span>
+                                <h4><a href="#">{{$item->model->product_name}}</a></h4>
+                                <span> ${{$item->model->product_price}}	</span>
                             </div>
                             <div class="cart-delete">
                                 <a href="#">×</a>
                             </div>
                         </li>
-                        <li>
-                            <div class="cart-img">
-                                <a href="#"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
-                            </div>
-                            <div class="cart-title">
-                                <h4><a href="#">Modern Chairs</a></h4>
-                                <span> 1 × $49.00	</span>
-                            </div>
-                            <div class="cart-delete">
-                                <a href="#">×</a>
-                            </div>
-                        </li>
+
+                        @endforeach
+
+                        @endif
                     </ul>
                     <div class="cart-total">
                         <h4>Subtotal: <span>$170.00</span></h4>
@@ -144,13 +138,14 @@
 
                                             
 
-                                    <td>  <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
- {{csrf_field()}}
-{{method_field('DELETE')}}
+                                    <td>   
+                        <form style="margin-left:20%; background-color:white" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                             {{csrf_field()}}
+                             {{method_field('DELETE')}}
 
-<button type="submit" class="cart-options">Remove from cart</button>
+                             <button style="background-color:white; border:2px solid white" type="submit" class="cart-options">x</button>
 
-     </form> </td>
+                             </form></td>
                                             </tr>
 
                                             @endforeach
@@ -260,10 +255,20 @@
 
 
 
+   @else
 
-        @else
+   <div class="cart-area pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
 
-<h3> No items in cart</h3>
+                        <h3 style="margin-left:40%"> No items in cart</h3>
+
+                   </div>
+                </div>
+          </div>
+   </div>
+
 
 @endif
 

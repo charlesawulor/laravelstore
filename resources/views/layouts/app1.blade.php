@@ -262,33 +262,36 @@
                 <div class="cart-content">
                     <h3>Shopping Cart</h3>
                     <ul>
+
+                    @if (Cart::count() > 0 )
+                    @foreach (Cart::content() as $item)
                         <li>
                             <div class="cart-img">
-                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                                <a href="#"><img src="/laravelstore/storage/app/public/{{$item->model->image}}" alt=""></a>
                             </div>
                             <div class="cart-title">
-                                <h4><a href="#">Stylish Swing Chair</a></h4>
-                                <span> 1 × $49.00	</span>
+                                <h4><a href="#">{{$item->model->product_name}}</a></h4>
+                                <span> ${{$item->model->product_price}}	</span>
                             </div>
-                            <div class="cart-delete">
-                                <a href="#">×</a>
-                            </div>
+                            
+
+                            <form style="margin-left:20%; background-color:white" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                             {{csrf_field()}}
+                             {{method_field('DELETE')}}
+
+                             <button style="background-color:white; border:2px solid white" type="submit" class="cart-options">x</button>
+
+                             </form>
                         </li>
-                        <li>
-                            <div class="cart-img">
-                                <a href="#"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
-                            </div>
-                            <div class="cart-title">
-                                <h4><a href="#">Modern Chairs</a></h4>
-                                <span> 1 × $49.00	</span>
-                            </div>
-                            <div class="cart-delete">
-                                <a href="#">×</a>
-                            </div>
-                        </li>
+
+                        @endforeach
+
+                        @endif
+
+                   
                     </ul>
                     <div class="cart-total">
-                        <h4>Subtotal: <span>$170.00</span></h4>
+                        <h4>Subtotal: <span>$1700.00</span></h4>
                     </div>
                     <div class="cart-btn btn-hover">
                         <a class="theme-color" href="{{route('cart')}}">view cart</a>
@@ -385,6 +388,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row gx-0">
+
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="modal-img-wrap">
                                     <img src="assets/images/product/quickview.png" alt="">

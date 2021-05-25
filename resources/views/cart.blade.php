@@ -60,9 +60,7 @@
                     <div class="cart-total">
                         <h4>Subtotal: <span>${{ Cart::subtotal() }}</span></h4>
                     </div>
-                    <div class="cart-btn btn-hover">
-                        <a class="theme-color" href="cart.html">view cart</a>
-                    </div>
+                 
                     <div class="checkout-btn btn-hover">
                         <a class="theme-color" href="checkout.html">checkout</a>
                     </div>
@@ -110,8 +108,8 @@
                                                 <th class="width-name">Product</th>
                                                 <th class="width-price"> Price</th>
                                                 <th class="width-quantity">Quantity</th>
-                                                <th class="width-subtotal">Subtotal</th>
                                                 <th class="width-remove"></th>
+                                                <th class="width-remove">Save for later</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,20 +130,36 @@
                                                         <input class="cart-plus-minus-box input-text qty text" name="qtybutton" value="1">
                                                     </div>
                                                 </td>
-                                                <td class="product-total"><span>$</span></td>
+                                           
 
                                             
 
                                             
 
-                                    <td>   
-                        <form style="margin-left:20%; background-color:white" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                                    <td>  
+
+
+                                    <form style="margin-left:20%; background-color:white" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
                              {{csrf_field()}}
                              {{method_field('DELETE')}}
 
                              <button style="background-color:white; border:2px solid white" type="submit" class="cart-options">x</button>
 
-                             </form></td>
+                             </form>
+                             
+                             </td>
+
+
+                             <td>  
+
+
+                             <form style="margin-left:20%; background-color:white" action="{{route('cart.switchToSaveForLater', $item->rowId)}}" method="POST">
+                                  {{csrf_field()}}
+                                <button style="background-color:white; border:2px solid white" type="submit" class="cart-options">Save for later</button>
+                            </form>
+                               </td>
+
+
                                             </tr>
 
                                             @endforeach
@@ -176,6 +190,9 @@
                         </form>
                     </div>
                 </div>
+
+
+
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="cart-calculate-discount-wrap mb-40">
@@ -274,6 +291,89 @@
 
 
 @endif
+
+
+
+           @if (Cart::instance('saveForLater')->count() > 0)
+
+            <h5> {{ Cart::instance('saveForLater')->count() }} item(s) saved for later</h5>
+
+
+      <div class="wishlist-area pb-100 pt-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="#">
+                            <div class="wishlist-table-content">
+                                <div class="table-content table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="width-remove"></th>
+                                                <th class="width-thumbnail"></th>
+                                                <th class="width-name">Product</th>
+                                                <th class="width-price"> Unit price </th>
+                                                <th class="width-wishlist-cart"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        @foreach (Cart::instance('saveForLater')->content() as $item)
+                                            <tr>
+                                              
+
+
+                                  <td>            
+                                    <form style="margin-left:20%; background-color:white" action="{{route('saveForLater.destroy', $item->rowId)}}" method="POST">
+                             {{csrf_field()}}
+                             {{method_field('DELETE')}}
+
+                             <button style="background-color:white; border:2px solid white" type="submit" class="cart-options">x</button>
+
+                             </form>
+                                </td>              
+
+
+
+                                                <td class="product-thumbnail">
+                                                    <a href="product-details.html"><img src="/laravelstore/storage/app/public/{{$item->model->image}}" alt=""></a>
+                                                </td>
+                                                <td class="product-name">
+                                                    <h5><a href="product-details.html"> {{$item->model->product_name}}</a></h5>
+                                                </td>
+                                                <td class="product-wishlist-price"><span class="amount">$ {{$item->model->product_price}}</span></td>
+                                              
+                                                <td class="wishlist-cart btn-hover">
+                                                
+                                                
+                            <form style="margin-left:20%; background-color:white" action="{{route('saveForLater.switchToCart', $item->rowId)}}" method="POST">
+                                  {{csrf_field()}}
+
+                                  <button style="background-color:#e97730; border:2px solid white ; color:white ; font-weight:600 ; padding: 8px 15px" type="submit" class="single-product-cart btn-hover" >Move to cart</button>
+
+                            </form>
+                                                
+                                                
+                                                </td>
+                                            </tr>
+                                    
+                                          @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      @else
+
+      <h3>You have no saved item</h3> 
+
+       @endif
 
                 
 @endsection

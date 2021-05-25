@@ -93,14 +93,14 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('assets/images/logo/logo2.png')}}" alt="logo"></a>
+                                <a href="http://localhost/laravelstore/public/"><img src="{{asset('assets/images/logo/logo2.png')}}" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-block d-flex justify-content-center">
                             <div class="main-menu text-center">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">HOME</a>
+                                        <li><a href="http://localhost/laravelstore/public/">HOME</a>
                                             <ul class="sub-menu-style">
                                                 <li><a href="index.html">Home version 1 </a></li>
                                                 <li><a href="index-2.html">Home version 2</a></li>
@@ -286,6 +286,7 @@
                              <button style="background-color:white; border:2px solid white" type="submit" class="cart-options">x</button>
 
                              </form>
+
                         </li>
 
                         @endforeach

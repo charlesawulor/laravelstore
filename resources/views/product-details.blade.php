@@ -50,24 +50,20 @@
 
 
 
-                            <form action="{{route('cart')}}" method="POST">
-  {{ csrf_field() }}
-   <input type="text" name="id" value="{{$products->id}}">
- <input type="text" name="name" value="{{$products->product_name}}">
- <input type="text" name="price" value="{{$products->product_price}}">
- <button type="submit" class="single-product-cart btn-hover" >Add to cart</button>
- </form>
+                <form action="{{route('cart')}}" method="POST">
+                  {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{$products->id}}">
+                    <input type="hidden" name="name" value="{{$products->product_name}}">
+                    <input type="hidden" name="price" value="{{$products->product_price}}">
+                    <button style="background-color:#e97730; border:2px solid white ; color:white ; font-weight:600 ; padding: 20px 17px" type="submit" class="single-product-cart btn-hover" >Add to cart</button>
+                    </form>
 
-
-
-                            <div class="product-details-action-wrap">
+                       <div class="product-details-action-wrap">
                                 <div class="product-quality">
                                     <input class="cart-plus-minus-box input-text qty text" name="qtybutton" value="1">
-                                </div>
+                       </div>
 
-                                <div class="single-product-cart btn-hover">
-                                    <a href="#">Add to cart</a>
-                                </div>
+
 
                                 <div class="single-product-wishlist">
                                     <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>

@@ -43,7 +43,7 @@ Route::delete('/saveForLater/{product}', 'SaveForLaterController@destroy')->name
 Route::post('/saveForLater/switchToCart/{product}', 'SaveForLaterController@switchToCart')->name('saveForLater.switchToCart');
 
 
-
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
 
 
 

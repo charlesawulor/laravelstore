@@ -62,7 +62,7 @@
                     </div>
                  
                     <div class="checkout-btn btn-hover">
-                        <a class="theme-color" href="checkout.html">checkout</a>
+                        <a class="theme-color" href="{{route('checkout')}}">checkout</a>
                     </div>
                 </div>
             </div>
@@ -265,7 +265,7 @@
                                 </div>
                             </div>
                             <div class="grand-total-btn btn-hover">
-                                <a class="btn theme-color" href="checkout.html">Proceed to checkout</a>
+                                <a class="btn theme-color" href="{{route('checkout')}}">Proceed to checkout</a>
                             </div>
                         </div>
                     </div>

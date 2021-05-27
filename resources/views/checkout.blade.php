@@ -247,14 +247,17 @@
 
 
 
-                                            @if (Cart::count() > 0 )
+                                      
                     @foreach (Cart::content() as $item)
                                     <div class="your-order-middle">
-                                                <li>{{$item->model->product_name}} <span>${{$item->model->product_price}}	</span></li>
+                                                <li>{{$item->model->product_name}} 
+                                                <span>${{$item->model->product_price}}	</span>
+                                               
+                                                </li> {{$item->qty}}	
                                           </div>    
 
                                          @endforeach
-                                         @endif
+                                
 
                                          <div class="your-order-info order-subtotal">
                                          <li>Subtotal <span>${{ Cart::subtotal() }}</span></li>

@@ -147,15 +147,16 @@
                                         </div>
                                     </div>
 
-                                      <div class="form-group">
-                                        <div id="card-element">
+                                    <div class="form-group">
+
+                                         <div id="card-element">
                                          <!-- Elements will create input elements here -->
                                          </div>
 
                                          <!-- We'll put the error messages in this element -->
-                                        <div id="card-errors" role="alert"></div>
+                                         <div id="card-errors" role="alert"></div>
 
-                                      </div>
+                                    </div>
 
 
 
